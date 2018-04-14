@@ -12,8 +12,17 @@
     state: present
 
 - name: Add nux desktop repository signing key
-  rpm_key: 
+  rpm_key:
     key: /etc/pki/rpm-gpg/RPM-GPG-KEY-nux.ro
+
+- name: Install rpmfusion repository
+  yum:
+    name: "{{ item }}"
+    validate_certs: no
+    disable_gpg_check: yes
+  with_items:
+    - https://download1.rpmfusion.org/free/el/rpmfusion-free-release-7.noarch.rpm
+    - https://download1.rpmfusion.org/nonfree/el/rpmfusion-nonfree-release-7.noarch.rpm
 
 - name: Install necessary packages
   yum:
