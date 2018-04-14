@@ -12,3 +12,8 @@
     name: nginx
     state: restarted
     enabled: yes
+
+- name: reboot
+  shell: sleep 2 && reboot
+  async: 30
+  poll: 0
