@@ -14,11 +14,10 @@ mariadb_root_password: '.change-this_111.'
 nginx_ssl_reverse_proxy: true
 # if you skip this, you have to install cert files manually
 nginx_ssl_create_sefsigned_cert: true
-nginx_reverse_proxy_path: rdp
+nginx_reverse_proxy_path: ssh
 nginx_ssl_port: 443
 nginx_ssl_cert_dir: /etc/nginx_cert
 nginx_ssl_cert_days: 3650
 nginx_ssl_cert_host: "{{ansible_fqdn}}"
 nginx_ssl_cert_key: "{{nginx_ssl_cert_host}}_key.pem"
 nginx_ssl_cert_crt: "{{nginx_ssl_cert_host}}_crt.pem"
-
