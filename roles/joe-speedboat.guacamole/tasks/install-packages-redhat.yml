@@ -20,6 +20,7 @@
     name: "{{ item }}"
     validate_certs: no
     disable_gpg_check: yes
+    enablerepo: yes
   with_items:
     - https://download1.rpmfusion.org/free/el/rpmfusion-free-release-7.noarch.rpm
     - https://download1.rpmfusion.org/nonfree/el/rpmfusion-nonfree-release-7.noarch.rpm
