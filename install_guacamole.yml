@@ -24,16 +24,35 @@
     yum:
       name: firewalld
       state: present
+
   - name: start firewalld
     service:
       name: firewalld
       enabled: yes
       state: started
+
   - name: open https port on firewalld
     firewalld:
       service: https
       permanent: true
       state: enabled
+
+  - name: open https port on firewalld
+    firewalld:
+      service: http
+      permanent: true
+      state: enabled
+
+  - name: open https port on firewalld
+    firewalld:
+      port: "{{ item }}"/tcp
+      permanent: true
+      state: enabled
+    with_items:
+      - 8080
+      - 8081
+      - 8000
+
   - name: enable firewalld
     service:
       name: firewalld
