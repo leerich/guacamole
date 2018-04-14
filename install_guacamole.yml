@@ -19,8 +19,8 @@
       state: started
   - name: open https port on firewalld
     firewalld:
-      service: https 
-      permanent: true 
+      service: https
+      permanent: true
       state: enabled
   - name: enable firewalld
     service:
