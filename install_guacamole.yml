@@ -20,24 +20,24 @@
       - common
     ignore_errors: yes
 
-#  - name: install firewalld
-#    yum:
-#      name: firewalld
-#      state: present
-#  - name: start firewalld
-#    service:
-#      name: firewalld
-#      enabled: yes
-#      state: started
-#  - name: open https port on firewalld
-#    firewalld:
-#      service: https
-#      permanent: true
-#      state: enabled
+  - name: install firewalld
+    yum:
+      name: firewalld
+      state: present
+  - name: start firewalld
+    service:
+      name: firewalld
+      enabled: yes
+      state: started
+  - name: open https port on firewalld
+    firewalld:
+      service: https
+      permanent: true
+      state: enabled
   - name: enable firewalld
     service:
       name: firewalld
-      enabled: no
-      state: stopped
+      enabled: yes
+      state: restarted
     ignore_errors: yes
 ...
