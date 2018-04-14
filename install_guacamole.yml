@@ -8,17 +8,17 @@
     mariadb_user_password: '.change-this_000.'
     mariadb_root_password: '.change-this_111.'
   tasks:
-- name: RHEL | Disable SELinux
-  selinux:
-    state: permissive
-    policy: targeted
-  register: selinux_disable
-  notify:
-    - reboot
-    - wait for instance
-  tags:
-    - common
-  ignore_errors: yes
+  - name: RHEL | Disable SELinux
+    selinux:
+      state: permissive
+      policy: targeted
+    register: selinux_disable
+    notify:
+      - reboot
+      - wait for instance
+    tags:
+      - common
+    ignore_errors: yes
 
   - name: install firewalld
     yum:
