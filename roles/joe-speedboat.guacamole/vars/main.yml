@@ -7,7 +7,7 @@ tomcat_conf: /etc/tomcat/tomcat.conf
 guacamole_packages_EL:
   - {package: "ca-certificates"}
   - {package: "cairo-devel"}
-  #- {package: "freerdp-devel"}
+  - {package: "freerdp-devel"}
   - {package: "ghostscript"}
   - {package: "java-1.8.0-openjdk"}
   - {package: "libguac"}
