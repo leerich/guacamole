@@ -24,6 +24,8 @@
   rpm_key:
     key: /etc/pki/rpm-gpg/RPM-GPG-KEY-nux.ro
 
+- name: Enable rhui-REGION-rhel-server-optional repository
+  command: yum-config-manager --enable rhui-REGION-rhel-server-optional
 #- name: Install rpmfusion repository
 #  yum:
 #    name: "{{ item }}"
